@@ -9,9 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" src="/index.css"/>
     <style>
-        @charset "utf-8";
+        @charset "UTF-8";
         html{
             font-family: 'Roboto', sans-serif;
         }
@@ -76,6 +75,7 @@
         var name = prompt("Enter your name: ");
         if(name == null || name == "") 
             name = "anonymous";
+        socket.emit('new-user', name);
         const chatMes = document.querySelector('#message');
         const chatForm = document.querySelector('#chatform');
         function displayAccountName(){
