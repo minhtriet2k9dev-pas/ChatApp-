@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection',(socket) => {
-    console.log('user connected');
+    var time = new Date();
+    console.log('User connected at',time.getHours()+':'+time.getMinutes()+':'+time.getSeconds());
     socket.on('on-chat', (message) => {
         io.emit('user-chat', message);
         console.log({message});
